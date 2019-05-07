@@ -1,6 +1,5 @@
 # Working with APIs and Nested Data Structures
-
-Erin and Greg
+Greg and Erin
 
 ## Objectives
 
@@ -26,6 +25,7 @@ We'll be learning much more about APIs later on in this course. For now, you can
 Just like we can use Ruby to send a web request for a web page that is written in HTML, and receive a response that is full of HTML, we can use Ruby to send a web request to an API and receive a collection of JSON in return.
 
 ## What's JSON?
+
 **JSON** is a language-agnostic way of formatting data. If we send a web request to the Star Wars API, it will return to us a JSON collection of data. With just one easy line of code, we can tell Ruby to treat that JSON collection as a nested hash. In this way, large and complicated amounts of data can be shared across platforms.
 
 ## How can Ruby Send a Web Request?
@@ -50,13 +50,14 @@ puts character_data
 => "{\"name\":\"Luke Skywalker\",\"height\":\"172\",\"mass\":\"77\",\"hair_color\":\"blond\",\"skin_color\":\"fair\",\"eye_color\":\"blue\",\"birth_year\":\"19BBY\",\"gender\":\"male\",\"homeworld\":\"http://www.swapi.co/api/planets/1/\",\"films\":[\"http://www.swapi.co/api/films/6/\",\"http://www.swapi.co/api/films/3/\",\"http://www.swapi.co/api/films/2/\",\"http://www.swapi.co/api/films/1/\",\"http://www.swapi.co/api/films/7/\"],\"species\":[\"http://www.swapi.co/api/species/1/\"],\"vehicles\":[\"http://www.swapi.co/api/vehicles/14/\",\"http://www.swapi.co/api/vehicles/30/\"],\"starships\":[\"http://www.swapi.co/api/starships/12/\",\"http://www.swapi.co/api/starships/22/\"],\"created\":\"2014-12-09T13:50:51.644000Z\",\"edited\":\"2014-12-20T21:17:56.891000Z\",\"url\":\"http://www.swapi.co/api/people/1/\"}"
 ```
 
-Uh-oh, you might be thinking. The `character_data` variable that we used to capture the response from the API *isn't a nested hash*, it's a crazy long ugly-looking string.
+Uh-oh, you might be thinking. The `character_data` variable that we used to capture the response from the API _isn't a nested hash_, it's a crazy long ugly-looking string.
 
 Well, not exactly. The ugly response above is actually a string of **JSON.** We can tell Ruby how to take this JSON and parse it into an easy-to-work-with Ruby hash. To do this, we'll first require Ruby's JSON module, which will give us access to some handy methods, including one that will help us transform the data into Ruby:
 
 ```ruby
 require 'JSON'
 ```
+
 Now, we can access our data with the `parse` method:
 
 ```ruby
@@ -100,7 +101,7 @@ Now that we have a pretty clear idea of how to work with APIs and use Ruby to se
 
 ## Instructions
 
-***Make sure you `gem install rest-client` in the directory of this project before you start coding!!***
+**_Make sure you `gem install rest-client` in the directory of this project before you start coding!!_**
 
 ### Understanding our Program
 
@@ -110,7 +111,7 @@ Once you've cloned down this project onto your computer, open it up and get fami
 
 Notice that we've provided you with a `bin` directory and a `lib` directory.
 
-The `bin` directory has one file, `run.rb`. This file is an *executable file*. That means that this is the file a user will run from the command line to execute the program. Something like this:
+The `bin` directory has one file, `run.rb`. This file is an _executable file_. That means that this is the file a user will run from the command line to execute the program. Something like this:
 
 ![](http://readme-pics.s3.amazonaws.com/Apis-and-Iteration_Screen_Cap.gif)
 
@@ -156,7 +157,7 @@ end
 
 It takes in an argument of a character's name (which gets passed to the method when it is called in the `run.rb` file) and relies on two helper methods that you will define to make a request to the API and parse the response from that request.
 
-The `get_character_movies` method will take in an argument of the character's name and use the Rest Client gem to query the API *for all the characters*.
+The `get_character_movies` method will take in an argument of the character's name and use the Rest Client gem to query the API _for all the characters_.
 
 Then, the resulting JSON is parsed into a handy Ruby hash. Don't forget to `require 'json'` at the top of the file. Any new outside libraries you use need to be required (i.e. rest-client, json, pry...).
 
