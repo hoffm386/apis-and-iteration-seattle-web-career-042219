@@ -1,6 +1,5 @@
 # Working with APIs and Nested Data Structures
-
-Greg and Erin are the authors.
+Greg and Erin
 
 ## Objectives
 
